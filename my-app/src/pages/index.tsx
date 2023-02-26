@@ -5,23 +5,12 @@ import Hero from "@/section/hero";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import {
-  FaApple,
-  FaComments,
-  FaGooglePlay,
-  FaHeart,
-  FaPlay,
-  FaRegListAlt,
-  FaUsers,
-} from "react-icons/fa";
-import { BiGroup } from "react-icons/bi";
 import { useEffect } from "react";
 import About from "../section/about";
-import Achievement from "../section/Achievement";
-import Features from "../section/Features";
-import CTA from "../section/CTA";
-import Header from "@/component/layout/Header";
-import Footer from "@/component/layout/Footer";
+import Achievement from "@/section/achievement";
+import Features from "@/section/features";
+import CTA from "@/section/cta";
+
 import Layout from "@/component/layout/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,7 +18,6 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   useEffect(() => {
     AOS.init();
-    AOS.refresh();
   }, []);
   return (
     <>

@@ -4,7 +4,7 @@ import React from "react";
 const about = () => {
   return (
     <section className="bg-white pt-24">
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto py-20">
         <div className="flex flex-wrap">
           <div className="w-full md:w-1/2">
             <div className="flex flex-col mt-20 mb-7 ml-28">
@@ -42,7 +42,13 @@ const about = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <img src="/about.png" alt="about" data-aos="fade-left" />
+            <Image
+              src="/about.png"
+              alt="about"
+              width={2256}
+              height={2032}
+              data-aos="fade-left"
+            />
           </div>
         </div>
       </div>

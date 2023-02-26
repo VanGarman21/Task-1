@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 const CTA = () => {
   return (
     <section className="bg-[#E5F0FD]">
-      <div className="container mx-auto px-6 pt-20">
+      <div className="container mx-auto ">
         <div className="flex flex-wrap">
           <div className="w-full md:w-1/2">
             <div className="flex flex-col mt-20 mb-7 ml-28">
@@ -32,10 +33,12 @@ const CTA = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <img
+            <Image
               src="/mobile muckup.png"
               alt="mobile muckup"
-              className="w-full h-full right-0"
+              width={1610}
+              height={1120}
+              data-aos="fade-left"
             />
           </div>
         </div>

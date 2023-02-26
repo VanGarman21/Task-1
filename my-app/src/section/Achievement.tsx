@@ -1,6 +1,6 @@
 import React from "react";
 
-const Achievement = () => {
+const achievement = () => {
   return (
     <section id="about" className="relative w-full py-24 ">
       <div className="layout mt-4">
@@ -101,4 +101,4 @@ const Achievement = () => {
   );
 };
 
-export default Achievement;
+export default achievement;
