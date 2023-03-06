@@ -37,7 +37,7 @@ const features = () => {
                 Connect with other users and grow your network.
               </p>
               <a
-                href="#"
+                href="netbook_users"
                 className="inline-block py-2 px-6 border rounded-full text-sm font-medium text-[#217BF4] border-[#217BF4] hover:text-white hover:bg-[#217BF4]"
               >
                 Learn More
@@ -126,13 +126,13 @@ const features = () => {
             </div>
             <div className="p-6">
               <h3 className="text-lg font-medium text-[#656464] mb-2">
-                Video Chat
+                Free Movies
               </h3>
               <p className="text-base text-[#656464] mb-4">
-                Video chat with other users.
+                Find and share movies with other users.
               </p>
               <a
-                href="#"
+                href="movies"
                 className="inline-block py-2 px-6 border rounded-full text-sm font-medium text-[#217BF4] border-[#217BF4] hover:text-white hover:bg-[#217BF4]"
               >
                 Learn More

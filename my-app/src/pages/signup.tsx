@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import {
   HiOutlineMail,
   HiOutlineLockClosed,
   HiOutlineUserCircle,
-  HiOutlineEye,
-  HiOutlineEyeOff,
 } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
@@ -18,7 +16,6 @@ interface SignUpFormInputs {
 }
 
 const SignUpForm: React.FC = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -27,6 +24,48 @@ const SignUpForm: React.FC = () => {
 
   const onSubmit = (data: SignUpFormInputs) => {
     console.log(data);
+  };
+
+  const handleGoogleSignup = async () => {
+    try {
+      const response = await fetch(
+        "https://yourbackend.com/api/google_signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // your request body data
+          }),
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleFacebookSignup = async () => {
+    try {
+      const response = await fetch(
+        "https://yourbackend.com/api/facebook_signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // your request body data
+          }),
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -100,7 +139,7 @@ const SignUpForm: React.FC = () => {
                 <HiOutlineLockClosed className="text-gray-500" />
               </div>
               <input
-                type={showPassword ? "text" : "password"} // use state to determine input type
+                type="password"
                 id="password"
                 placeholder="Password"
                 className={`w-full pl-10 pr-3 py-2 rounded-lg border-2 ${
@@ -114,16 +153,6 @@ const SignUpForm: React.FC = () => {
                   },
                 })}
               />
-              {/* button to toggle password visibility */}
-              <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="text-gray-500 focus:outline-none"
-                >
-                  {showPassword ? <HiOutlineEyeOff /> : <HiOutlineEye />}
-                </button>
-              </div>
             </div>
             {errors.password && (
               <span className="text-red-500 text-sm mt-1">
@@ -132,7 +161,7 @@ const SignUpForm: React.FC = () => {
             )}
           </div>
           <div className="mb-6">
-            <label htmlFor="password" className="sr-only">
+            <label htmlFor="repeat-password" className="sr-only">
               Repeat Password
             </label>
             <div className="relative">
@@ -141,7 +170,7 @@ const SignUpForm: React.FC = () => {
               </div>
               <input
                 type="password"
-                id="password"
+                id="repeat-password"
                 placeholder="Repeat Password"
                 className={`w-full pl-10 pr-3 py-2 rounded-lg border-2 ${
                   errors.password ? "border-red-500" : "border-gray-300"
@@ -161,6 +190,7 @@ const SignUpForm: React.FC = () => {
               </span>
             )}
           </div>
+
           <button
             type="submit"
             className="w-full bg-indigo-500 text-white rounded-lg py-2 mb-4"
